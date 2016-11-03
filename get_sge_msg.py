@@ -2,6 +2,8 @@
 from __future__ import print_function
 import httplib2
 import os
+import sys
+sys.path.append("google-api-python-client/")
 
 from apiclient import discovery
 import oauth2client
@@ -11,7 +13,10 @@ from oauth2client import tools
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/gmail-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/gmail.readonly'
-CLIENT_SECRET_FILE = '/Users/dlituiev/.google/client_secret_423201044976-e745ce413p00ceferjs3lh5vga3pajk9.apps.googleusercontent.com.json'
+
+CLIENT_SECRET_FILE = os.path.join(
+            os.environ["HOME"], 
+            '.google/client_secret_423201044976-e745ce413p00ceferjs3lh5vga3pajk9.apps.googleusercontent.com.json')
 APPLICATION_NAME = 'sungridcollector'
 
 
